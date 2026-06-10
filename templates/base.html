@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Signly{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    {% block head %}{% endblock %}
+
+    <style>
+
+        :root{
+            --background:#f8f7f4;
+            --surface:#ffffff;
+            --text:#111827;
+            --muted:#6b7280;
+            --primary:#4f46e5;
+            --success:#10b981;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            height:100%;
+        }
+
+        body{
+            min-height:100vh;
+            font-family:'Inter',sans-serif;
+            color:var(--text);
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(99,102,241,.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(16,185,129,.08),
+                    transparent 30%
+                ),
+                var(--background);
+
+            -webkit-font-smoothing:antialiased;
+            text-rendering:optimizeLegibility;
+        }
+
+        .content-wrapper{
+            width:100%;
+            min-height:100vh;
+        }
+
+        ::selection{
+            background:rgba(79,70,229,.15);
+        }
+
+        button{
+            font-family:'Inter',sans-serif;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="content-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+</html>
